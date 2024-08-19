@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Data from './Data';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+function ncard (val) {
+  return(
+    <App imgsrc = {val.imgsrc}
+    title = {val.title}
+    sname = {val.sname}
+    />
+  );
+}
+
 root.render(
   <React.StrictMode>
-    <App />
+    <h1 className="heading_style">Rate the Most Watched Series in Netflix </h1>
+    {Data.map(ncard)}
   </React.StrictMode>
 );
 
